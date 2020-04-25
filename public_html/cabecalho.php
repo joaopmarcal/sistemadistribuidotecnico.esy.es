@@ -37,9 +37,6 @@ if (!isset($_SESSION['nome'])){
                 <a class="nav-link" href="lista_chamado.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a href="abrirChamado.php" class="nav-link">Novo Chamado</a>
-            </li>
-            <li class="nav-item">
                 <a href="lista_chamado.php" class="nav-link">Visualizar chamados</a>
             </li>
             <li class="nav-item">

@@ -26,21 +26,20 @@
     public function atualizar($id){
       $query = "update chamado set prioridade_chamado = '". $this->prioridade_chamado ."',";
       $query .= "telefone_usuario = '". $this->telefone_usuario ."', tipo_problema = '". $this->tipo_problema ."',descricao_chamado = '". $this->descricao_chamado ."' where id_chamado =" . $id;
-      var_dump($query);
+      //var_dump($query);
       $conn = \ConexaoClasse::ligarConexao();
       $conn->exec($query);
     }
 
-    public function visualizarUm($id){
-      $query = "select * from chamado where id_chamado = " . $id;
+    public function atualizarInformacaoTecnico($id){
+      $query = "update chamado set desc_atend_chamado = '". $this->desc_atend_chamado ."',";
+      $query .= "id_status = '". $this->id_status ."', atribuicao_chamado = '". $this->atribuicao_chamado ."' where id_chamado =" . $id;
       $conn = \ConexaoClasse::ligarConexao();
-      $resultado = $conn->query($query);
-      $lista = $resultado->fetchAll(PDO::FETCH_ASSOC);
+      $conn->exec($query);
 
-      return $lista;
     }
 
-    public function visualizar($usuario){
+    public function visualizarUm($id){
       $query  = "select c.id_chamado, s.nome_status, c.id_usuario, c.id_status, c.numero_chamado, c.atribuicao_chamado, ";
       $query .= "c.prioridade_chamado, c.telefone_usuario, c.tipo_problema, ";
       $query .= "c.descricao_chamado, c.desc_atend_chamado, u.nome_usuario, ";
@@ -49,7 +48,24 @@
       $query .= "from chamado c ";
       $query .= "inner join usuario u on c.id_usuario = u.id_usuario ";
       $query .= "left join status_chamado s on c.id_status = s.id_status ";
-      $query .= "where c.id_usuario = ". $usuario;
+      $query .= "where c.id_chamado = ". $id;
+      $conn = \ConexaoClasse::ligarConexao();
+      $resultado = $conn->query($query);
+      $lista = $resultado->fetchAll(PDO::FETCH_ASSOC);
+
+      return $lista;
+    }
+
+    public function visualizar(){
+      $query  = "select c.id_chamado, s.nome_status, c.id_usuario, c.id_status, c.numero_chamado, c.atribuicao_chamado, ";
+      $query .= "c.prioridade_chamado, c.telefone_usuario, c.tipo_problema, ";
+      $query .= "c.descricao_chamado, c.desc_atend_chamado, u.nome_usuario, ";
+      $query .= "u.email_usuario, u.cep, u.logradouro,u.bairro,u.localidade, u.uf, ";
+      $query .= "u.numero, u.senha_usuario, u.tipo_usuario ";
+      $query .= "from chamado c ";
+      $query .= "inner join usuario u on c.id_usuario = u.id_usuario ";
+      $query .= "left join status_chamado s on c.id_status = s.id_status ";
+      //$query .= "where c.id_usuario = ". $chamado;
 
       $conn = \ConexaoClasse::ligarConexao();
       $resultado = $conn->query($query);

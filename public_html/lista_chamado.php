@@ -4,7 +4,7 @@ require_once "cabecalho.php";
 require_once "class/ChamadoClasse.php";
 
 $lista = new ChamadoClasse();
-$listaAtualizada = $lista->visualizar($_SESSION['id']);
+$listaAtualizada = $lista->visualizar();
 
 //print_r($listaAtualizada);
 ?>
@@ -36,7 +36,7 @@ $listaAtualizada = $lista->visualizar($_SESSION['id']);
                         <tbody>
                             <?php foreach ($listaAtualizada as $lista): ?>
                             <tr>
-                                <td><a href="">M0<?php print $lista['id_chamado'] ?></a></td>
+                                <td><a href="visualizar_chamado.php?id=<?php print $lista['id_chamado']; ?>">M0<?php print $lista['id_chamado'] ?></a></td>
                                 <td><?php print $lista['email_usuario'] ?></td>
                                 <td><?php print substr($lista['descricao_chamado'],0,30) ?></td>
                                 <td><?php print $lista['nome_status'] ?></td>

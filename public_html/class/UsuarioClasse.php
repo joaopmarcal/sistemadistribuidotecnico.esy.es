@@ -32,4 +32,12 @@
 
     }
 
+    public function listarTecnicos(){
+      $query = "select id_usuario,nome_usuario from usuario where tipo_usuario = 2";
+      $conn = \ConexaoClasse::ligarConexao();
+      $resultado = $conn->query($query);
+      $lista = $resultado->fetchAll(PDO::FETCH_ASSOC);
+      return $lista;
+    }
+
   }
