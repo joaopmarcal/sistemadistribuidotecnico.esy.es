@@ -40,6 +40,9 @@ if (!isset($_SESSION['nome'])){
                 <a href="lista_chamado.php" class="nav-link">Visualizar chamados</a>
             </li>
             <li class="nav-item">
+                <a href="meus_dados.php" class="nav-link">Meus Dados</a>
+            </li>
+            <li class="nav-item">
                 <a href="logout.php" class="nav-link">Sair</a>
             </li>
         </ul>

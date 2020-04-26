@@ -32,6 +32,32 @@
 
     }
 
+    public function atualizarDados($id){
+      $query = "update usuario set nome_usuario = '". $this->nome ."',";
+      $query .= "email_usuario = '". $this->email ."', cep = '". $this->cep ."',logradouro = '". $this->logradouro ."',";
+      $query .= "bairro = '". $this->bairro ."', localidade = '". $this->localidade ."',uf = '". $this->uf ."',";
+      $query .= "numero = '". $this->numero ."' where id_usuario =" . $id;
+      var_dump($query);
+      $conn = \ConexaoClasse::ligarConexao();
+      $conn->exec($query);
+    }
+
+    public function atualizarSenha($id){
+      $query = "update usuario set senha_usuario = '". $this->senha ."'";
+      $query .= "where id_usuario =" . $id;
+      //var_dump($query);
+      $conn = \ConexaoClasse::ligarConexao();
+      $conn->exec($query);
+    }
+
+    public function listarUm($id) {
+      $query = "select * from usuario where id_usuario =" . $id;
+      $conn = \ConexaoClasse::ligarConexao();
+      $resultado = $conn->query($query);
+      $lista = $resultado->fetchAll(PDO::FETCH_ASSOC);
+      return $lista;
+    }
+
     public function listarTecnicos(){
       $query = "select id_usuario,nome_usuario from usuario where tipo_usuario = 2";
       $conn = \ConexaoClasse::ligarConexao();

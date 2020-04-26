@@ -30,7 +30,7 @@ $listaAtualizada = $lista->visualizar();
                                 <th class="border-top-0 border-bottom-0 border-right border-dark">E-mail</th>
                                 <th class="border-top-0 border-bottom-0 border-right border-dark">Descrição</th>
                                 <th class="">Status do Chamado</th>
-                                <th>Editar</th>
+                                <th class="">Já está atribuido?</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,7 +40,7 @@ $listaAtualizada = $lista->visualizar();
                                 <td><?php print $lista['email_usuario'] ?></td>
                                 <td><?php print substr($lista['descricao_chamado'],0,30) ?></td>
                                 <td><?php print $lista['nome_status'] ?></td>
-                                <td><a href="editar_chamado.php?id=<?php print $lista['id_chamado']; ?>">Editar</a></td>
+                                <td><?php print $lista['atribuicao_chamado'] != "" ? "Sim" : "Não" ?></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
