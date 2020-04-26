@@ -1,7 +1,7 @@
 <?php
-require_once "cabecalho.php";
 
-require_once "class/ChamadoClasse.php";
+require_once "global.php";
+require_once "cabecalho.php";
 
 $lista = new ChamadoClasse();
 $listaAtualizada = $lista->visualizar();

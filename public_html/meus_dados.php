@@ -1,7 +1,7 @@
 <?php
-  require_once "cabecalho.php";
 
-  require_once "class/UsuarioClasse.php";
+  require_once "global.php";
+  require_once "cabecalho.php";
 
   $usuario = new UsuarioClasse();
   $listar = $usuario->listarUm($_SESSION['id']);

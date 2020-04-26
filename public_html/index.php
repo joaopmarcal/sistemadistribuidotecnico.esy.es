@@ -1,7 +1,6 @@
 <?php
 
-    require_once "class/ConexaoClasse.php";
-    require_once "class/UsuarioClasse.php";
+    require_once "global.php";
 
     if (isset($_POST['email'])){
 
@@ -82,10 +81,6 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
-
-                            <div id="formFooter">
-                                <a class="underlineHover" href="pagina_cadastro.php">Não possui cadastrado?</a>
-                            </div>
 
                         </div>
                     </div>

@@ -1,7 +1,8 @@
 <?php
-require_once "cabecalho.php";
-require_once "class/ChamadoClasse.php";
-require_once "class/UsuarioClasse.php";
+
+    require_once "global.php";
+
+    require_once "cabecalho.php";
 
     if (isset($_POST['descricao'])){
         $descricao_tecnico = $_POST['descricao'];
@@ -18,20 +19,20 @@ require_once "class/UsuarioClasse.php";
 
     }
 
-$chamado = new ChamadoClasse();
+    $chamado = new ChamadoClasse();
 
-$chamado_info = $chamado->visualizarUm($_GET['id']);
+    $chamado_info = $chamado->visualizarUm($_GET['id']);
 
-$tecnicos = new UsuarioClasse();
+    $tecnicos = new UsuarioClasse();
 
-$tecnico = $tecnicos->listarTecnicos();
+    $tecnico = $tecnicos->listarTecnicos();
 
-//var_dump($chamado_info);
+    //var_dump($chamado_info);
 
-//exit();
+    //exit();
 
 
-foreach ($chamado_info as $chamados){
+    foreach ($chamado_info as $chamados){
 ?>
     <section class="container">
         <form action="" method="post" class="">

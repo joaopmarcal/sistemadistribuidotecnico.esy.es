@@ -1,9 +1,9 @@
 <?php
 
-    require_once "cabecalho.php";
-    require_once "class/ChamadoClasse.php";
+    require_once "global.php";
 
-    $listar = new ChamadoClasse();
+    require_once "cabecalho.php";
+
     $editar = $listar->visualizarUm($_GET['id']);
 
     if (isset($_POST['telefone'])){

@@ -1,9 +1,10 @@
 <?php
+
+    require_once "global.php";
+
     require_once "cabecalho.php";
 
     if (isset($_POST['telefone'])){
-
-        require_once "class/ChamadoClasse.php";
 
         $id_usuario = $_SESSION['id'];
         $id_status = 1;
