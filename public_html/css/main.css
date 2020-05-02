@@ -354,3 +354,11 @@ img#perfil-foto{
       display: block;
     }
   }
+
+.map-responsive {
+  overflow: hidden;
+}
+
+.space {
+  margin-top: 50px;
+}

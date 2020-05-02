@@ -43,6 +43,9 @@ if (!isset($_SESSION['nome'])){
                 <a href="meus_dados.php" class="nav-link">Meus Dados</a>
             </li>
             <li class="nav-item">
+                <a href="cadastro_usuario.php" class="nav-link">cadastro de usuários</a>
+            </li>
+            <li class="nav-item">
                 <a href="logout.php" class="nav-link">Sair</a>
             </li>
         </ul>

@@ -58,6 +58,15 @@
       return $lista;
     }
 
+    public function listarUsuario(){
+      $query = "select * from usuario where tipo_usuario = 1 order by id_usuario desc";
+      $conn = \ConexaoClasse::ligarConexao();
+      $resultado = $conn->query($query);
+      $lista = $resultado->fetchAll(PDO::FETCH_ASSOC);
+      return $lista;
+    }
+
+
     public function listarTecnicos(){
       $query = "select id_usuario,nome_usuario from usuario where tipo_usuario = 2";
       $conn = \ConexaoClasse::ligarConexao();
